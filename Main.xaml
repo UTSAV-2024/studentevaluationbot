@@ -89,7 +89,7 @@
       <Variable x:TypeArguments="x:String" Name="currentFile" />
       <Variable x:TypeArguments="sd2:DataTable" Name="dt" />
       <Variable x:TypeArguments="njl:JObject" Name="jsonObj" />
-      <Variable x:TypeArguments="x:String" Default="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" Name="apiKey" />
+      <Variable x:TypeArguments="x:String" Default=apikey Name="apiKey" />
       <Variable x:TypeArguments="x:String" Default="https://api.groq.com/openai/v1/chat/completions" Name="geminiEndpoint" />
       <Variable x:TypeArguments="x:String" Name="scoreCol" />
       <Variable x:TypeArguments="x:String" Name="feedbackCol" />
