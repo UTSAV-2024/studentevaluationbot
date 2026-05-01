@@ -98,4 +98,84 @@ StudentEvaluationBot/
 git clone https://github.com/your-username/StudentEvaluationBot.git
 cd StudentEvaluationBot
 
+2️⃣ Open in UiPath Studio
+Open Main.xaml
+Click Manage Packages → Restore
+3️⃣ Install Required Packages
+
+Ensure these packages are installed:
+
+UiPath.System.Activities
+UiPath.Excel.Activities
+UiPath.PDF.Activities
+UiPath.OCR.Activities
+UiPath.IntelligentOCR.Activities
+Newtonsoft.Json
+4️⃣ Configure API Key
+
+In UiPath:
+
+Go to Variables Panel
+Set:
+apiKey = "YOUR_API_KEY"
+
+⚠️ Never commit your API key to GitHub
+
+5️⃣ Prepare Input Files
+
+Place files in:
+
+InputFiles/
+Required Files:
+QuestionPaper.pdf
+MarkingScheme.pdf
+Student Files:
+InputFiles/Students/
+
+Example:
+
+student1.pdf
+student2.pdf
+6️⃣ Verify File Paths
+
+Check in Main.xaml:
+
+Directory.GetFiles("InputFiles\Students","*.pdf")
+7️⃣ Run the Workflow
+Click ▶ Run
+Wait for execution
+📊 Output
+
+Generated file:
+
+Output/EvaluationResults.xlsx
+Output Format
+Name	Score	Feedback	Suggestions
+🧠 Workflow Logic
+1. Input Processing
+Reads question paper and marking scheme
+Loads student PDFs dynamically
+2. OCR Layer
+Extracts text using OCR engine
+3. Preprocessing
+Cleans text
+Removes unnecessary formatting
+4. Prompt Engineering
+Builds structured prompt:
+Score:
+Feedback:
+Suggestions:
+5. AI Evaluation
+Sends prompt to LLM API
+Receives evaluation response
+6. Parsing Layer
+Extracts:
+Score
+Feedback
+Suggestions
+7. Data Structuring
+Stores in DataTable
+8. Output Layer
+Writes to Excel
+
 # 🧱 Architecture
